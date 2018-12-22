@@ -41,11 +41,11 @@ if __name__ == "__main__":
         img_data = np.array(im)
         # Process it
         # cropped = crop_position(img_data)
-        bw = process_image(img_data)
-        bw = img_data
+        # bw = process_image(img_data)
+        # bw = img_data
         # Print the location of the player 
         try:
-            pos = find_digits(bw)
+            pos = find_digits(img_data)
             print(pos)
         except Exception as e:
             print("Failed to find position from image data")
