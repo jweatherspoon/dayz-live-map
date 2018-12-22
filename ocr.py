@@ -9,7 +9,6 @@ import string
 
 pytesseract.pytesseract.tesseract_cmd = "C:/Program Files (x86)/Tesseract-OCR/tesseract"
 
-BOUNDS = (1700, 90, 1860, 105)
 REMOVE_CHARS = '!"#$%&\'()*+,-/:;<=>?@[\\]^_`{|}~abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 TRAN_TABLE = dict.fromkeys(map(ord, REMOVE_CHARS), None)
 
@@ -31,7 +30,12 @@ def find_digits(position_img):
     text = text.translate(TRAN_TABLE)
 
     positions = np.array(text.split(' '))
-    return positions
+    print(positions)
+    return positions.astype(float)
+
+def get_image(bbox):
+    im = ImageGrab.grab(bbox)
+    return np.array(im)
 
 if __name__ == "__main__":
     pos = None
