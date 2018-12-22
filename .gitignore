@@ -1,7 +1,8 @@
-python-ocr/bin
-python-ocr/include
-python-ocr/lib
-python-ocr/pyvenv.cfg
-python-ocr/__pycache__
-python-ocr/.vscode
-python-ocr/test.html
+bin
+include
+lib
+pyvenv.cfg
+__pycache__
+.vscode
+test.
+*.pyc
