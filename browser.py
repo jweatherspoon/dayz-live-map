@@ -21,3 +21,21 @@ class Browser():
             city_search.send_keys(Keys.ENTER)
         except:
             pass 
+
+    def tryRemoveAds(self):
+        try:
+            self._b.execute_async_script(
+                "document.getElementsByClassName('leaderboard')[0].remove();"
+            )
+            return True 
+        except: 
+            return False 
+
+    def tryRemoveCookiesMsg(self):
+        try:
+            self._b.execute_async_script(
+                "document.body.firstChild.remove();"
+            )
+            return True 
+        except:
+            return False
